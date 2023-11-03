@@ -5,7 +5,7 @@ const controllersCategorize = require('./controllers/categorizeControllers');
 const controllersCloze = require('./controllers/clozeTestControllers');
 const controllersComprehension = require('./controllers/comprehensionControllers');
 const path = require('path');
-const __dirname1 = path.resolve();
+// const __dirname1 = path.resolve();
 const app = express();
 const connectDB = require('./config/config');
 
@@ -21,10 +21,10 @@ app.post('/api/save/comprehensions', controllersComprehension.createComprehensio
 app.get('/api/get/comprehensions', controllersComprehension.getAllComprehensions);
 
 // -- -- -- -- -- -- -- -- -- -- --For Deploy-- -- --
-app.use(express.static(path.join(__dirname1, "client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(PORT, () => {
