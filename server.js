@@ -5,6 +5,7 @@ const controllersCategorize = require('./controllers/categorizeControllers');
 const controllersCloze = require('./controllers/clozeTestControllers');
 const controllersComprehension = require('./controllers/comprehensionControllers');
 const path = require('path');
+require('dotenv').config();
 // const __dirname1 = path.resolve();
 const app = express();
 const connectDB = require('./config/config');
